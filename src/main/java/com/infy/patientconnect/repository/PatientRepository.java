@@ -1,5 +1,9 @@
 package com.infy.patientconnect.repository;
 
-public interface PatientRepository {
+import org.springframework.data.repository.CrudRepository;
 
+import com.infy.patientconnect.entity.Patient;
+
+public interface PatientRepository extends CrudRepository<Patient, String> {
+	Patient findByEmailId(String emailId);
 }
